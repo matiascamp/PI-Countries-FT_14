@@ -1,0 +1,60 @@
+.grandiv {
+    background: rgb(44, 45, 114);
+}
+
+.title {
+    padding-left: 180px;
+}
+
+.card {
+    display: block;
+    height: 800px;
+    padding-left: 180px;
+    margin-top: 10px;
+    margin-left: 500px;
+    margin-right: 500px;
+    border-style:hidden;
+    border-color: black;
+    border-radius: 7px;
+    padding-top: 10px;
+    color: black;
+    font-family: serif;
+    font-size: 120%;
+    background: linear-gradient(#b3adfc,#c9c5ff,#fffefe);
+    font-weight: bolder;
+
+}
+
+.textc {
+    text-align:center;
+    padding-right: 220px;
+    padding-top: 20px;
+}
+
+.textact {
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.subtextact {
+    justify-content: center;
+}
+
+.buttondetail {
+    margin-top: 60px;
+    margin-left: 200px;
+    width: 110px;
+    height: 50px;
+    font-size: 120%;
+    font-family: serif;
+    color: blanchedalmond;
+    background: #8692fc;
+    border-radius: 5px;
+    border-style: hidden;
+}
+
+
+.buttondetail:hover { 
+    background: rgb(74, 74, 247); 
+    color: white; 
+  } 

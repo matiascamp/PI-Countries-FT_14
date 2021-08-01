@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch } from 'react-redux';
 import { useState } from "react";
 import { getCountriesName } from "../../actions/index";
+import  "./SearchBar.css";
+
 
 export default function SearchBar() {
     const dispatch = useDispatch();
@@ -11,17 +13,16 @@ export default function SearchBar() {
         event.preventDefault();
         setName(event.target.value);
     };
+    
     const handleClick= (event) => {
         event.preventDefault();
         dispatch(getCountriesName(name))
     };
-    console.log("handleInputChange: ",handleInputChange)
-    console.log("HADLECLICK: ",handleClick)
-    console.log("name: ",name)
+
     return (
         <div className="divSearch">
-            <input type="text" placeholder="Buscar... " onChange={(e) => handleInputChange(e)} />
-            <button onClick={(e) => handleClick(e)}>Buscar</button>
+            <input className="inputsearch" type="text" placeholder="Buscar... " onChange={(e) => handleInputChange(e)} />
+            <button className="buttonsearch" onClick={(e) => handleClick(e)}>Buscar</button>
         </div>
     );
 }

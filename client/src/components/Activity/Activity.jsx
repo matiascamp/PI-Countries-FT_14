@@ -1,8 +1,9 @@
 import React from "react";
 import {useState,useEffect} from "react";
-import { NavLink,useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import { postActivity,getNameCountriesForm,clearNameCountriesFrom } from "../../actions/index";
 import { useDispatch, useSelector } from 'react-redux';
+import "./Activity.css"
 
 export default function Activity () {
     const dispatch = useDispatch();
@@ -34,8 +35,13 @@ export default function Activity () {
     }
     const handleReload = (e) => {
         e.preventDefault();
-        history.push("/activity"); 
         window.location.href = window.location.href;
+    }
+
+    const handleBack= (e) => {
+        e.preventDefault();
+        history.push("/home");
+        dispatch(clearNameCountriesFrom());
     }
 
     const handleNameAct = (e) => {
@@ -75,12 +81,13 @@ export default function Activity () {
     };
 
     return (
-        <div>
-            <form onSubmit={(e) => {handleSubmit(e)}} >
-            <input name="Nombre" type="text" placeholder="Nombre" onChange={(e) => {handleNameAct(e)}}/>
-        <label>
+        <body className="divform">
+            <form className="formact" onSubmit={(e) => {handleSubmit(e)}} >
+            <div className="container">
+            <input className="inp"  type="text" placeholder="Nombre" onChange={(e) => {handleNameAct(e)}}/>
+        <label className="text">
             Dificultad: 
-            <select onChange={(e) => {handleDifficult(e)}}>
+            <select className="select" onChange={(e) => {handleDifficult(e)}}>
                 <option value="">Dificultad</option>
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -88,38 +95,40 @@ export default function Activity () {
                 <option value="4">4</option>
                 <option value="5">5</option>
             </select>
-         </label>
-            <input name="Duracion" type="text" placeholder="Duracion" onChange={(e) => {handleDuration(e)}}/>
-            <label>
+         </label> <br/>
+            <input className="inp"  type="text" placeholder="Duracion" onChange={(e) => {handleDuration(e)}}/> 
+            <label className="text">
                 Estacion: 
-             <select onChange={(e) => {handleSeason(e)}}>
+             <select className="select" onChange={(e) => {handleSeason(e)}}>
                  <option value="">Estacion</option>
                 <option value="Verano">Verano</option>
                 <option value="Invierno">Invierno</option>
                 <option value="Primavera">Primavera</option>
                 <option value="Otoño">Invierno</option>
              </select>
-            </label>
-            <input type="text" placeholder="Buscar pais" onChange={(e) => handleCountryName(e)}/>
-            <button type="submit" onClick={(e) => handleGetCountryName(e)}>Buscar</button>
-            <div>
+            </label><br/>
+            <input className="inp" type="text" placeholder="Buscar pais" onChange={(e) => handleCountryName(e)}/>
+            <button className="butac" type="submit" onClick={(e) => handleGetCountryName(e)}>Buscar</button>
+            <div className="containermid">
+            <input className="butac2" type="submit" name="crear" placeholder="crear"/>
+            <button className="butac3" onClick={(e) => {handleReload(e)}}>Crear nueva actividad</button>
+            </div>
+            </div>
+            <span className="cardact">
                 {countryObj.map((c) => (
-                    <div className="countryObjInt" key={c.id}>
-                        <button onClick={(e) => handleDeleteCountry(e,c.id)}>X</button>
+                    <span    className="countryObjInt" key={c.id}>
+                        <button className="x" onClick={(e) => handleDeleteCountry(e,c.id)}>X</button>
                         <img src={c.flag} alt="img not found"  width="200px" height="200px"/>
-                        <h5>{c.name}</h5>
-                    </div>
+                        <span>{c.name}</span>
+                        
+                    </span>
                 ))}
-            </div>
-            <input type="submit" />
+            </span>
             </form>
-            <div>
-            <button onClick={(e) => {handleReload(e)}}>Crear nueva actividad</button>
-            </div>
-            <NavLink to="/home">
-                <button>Volver</button>
-            </NavLink>
-        </div>
+            <footer>
+                <button onClick={(e) => {handleBack(e)}}  className="butvol" >Volver</button>
+            </footer>
+        </body>
     )
 
 }

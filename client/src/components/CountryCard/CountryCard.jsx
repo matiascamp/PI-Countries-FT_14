@@ -1,13 +1,12 @@
 import React  from 'react';
-
+import "./CountryCard.css"
 
 export default function CountryCard(props) {
-    //console.log("CARD: ",props)
     return (
-        <div>
-            <img src={props.flag} alt="img country flag" width="100px" height="100px" />
-            <h5>Nombre del pais: {props.name}</h5>
-            <h5>Continente: {props.region}</h5>
-        </div>
+        <ul className="cards">
+            <img src={props.flag} alt="img country flag" width="200px" height="200px" />
+            <span>Pais: {props.name}</span>
+            <span>Continente: {props.region}</span>
+        </ul>
     );
 }

@@ -1,0 +1,36 @@
+.divSearch {
+    display:block;
+    margin-left: 35%;
+    padding-top: 10px;
+ 
+}
+
+.inputsearch {
+    flex-direction: row;
+    border-radius: 5px;
+    border: 1px solid #39c;
+    width: 350px;
+    height: 43px;
+    font-family: serif;
+    font-size: 150%;
+    margin-right: 3px;
+}
+
+
+.buttonsearch {
+    flex-direction: row;
+    width: 110px;
+    height: 50px;
+    font-size: 120%;
+    font-family: serif;
+    color: blanchedalmond;
+    background: #8692fc;
+    border-radius: 5px;
+    border: 1px solid #050141;
+    margin-left: 3px;
+}
+
+.buttonsearch:hover { 
+    background: rgb(74, 74, 247); 
+    color: white; 
+  } 

@@ -1,15 +1,18 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+import './LandigPage.css'
 
-export function Landing() {
+export default function Landing() {
+    
     return (
-        <div>
-         <h1>Web PI de Paises</h1>
+        <body className="bodylanding">
+        <div className="imgpng">
+         <h1 className="h1landing">Web PI de Paises</h1>
          <NavLink to="/home">
-             <button>Ingresar</button>
+             <button className = "boton_landing">Ingresar</button>
          </NavLink>
         </div>
+        </body>
     );
 }
 
-export default Landing;

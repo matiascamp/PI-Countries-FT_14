@@ -1,0 +1,22 @@
+.cards {
+    display: inline-flex;
+    flex-direction: column;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    align-content: space-evenly;
+    border-style:hidden;
+    border-color: black;
+    border-radius: 7px;
+    padding-block: 40px;
+    padding-right: 40px;
+    color: black;
+    font-family: serif;
+    font-size: 120%;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    background: linear-gradient(#b3adfc,#c9c5ff,#fffefe);
+
+}
