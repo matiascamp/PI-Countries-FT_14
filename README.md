@@ -17,3 +17,8 @@
 - Usar y practicar testing.
 
 
+## Creacion,desarrollo y funcionalidad
+
+
+Desarrollo de una SPA utilizando React para el Front End y Redux como state management.Todos los componentes fueron desarrollados con CSS sin uso de librerias externas. La SPA consume datos de una API (restcountries) a traves de un Back End desarrollado en Node.JS utilizando Express,agredando nuevas funcionalidades a la API original.
+Algunos features del proyecto: cache de busquedas,ordenamientos y filtros,formulario controlado para creacion de actividades de los paises
